@@ -11,12 +11,19 @@ public class Collision_Trigger_Player : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
 	}
+
+    /*
+     * handles all trigger events.
+     */
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Respawn") {
             this.transform.position = respawnCord;
+        }
+        if (other.gameObject.tag == "Jewel")
+        {
+            Debug.Log("Do jewel stuff.");
         }
     }
 }
