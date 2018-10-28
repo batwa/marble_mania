@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    float strength = 1.0f;
+    public float speed = 0.25f;
     Rigidbody r;
     List<Camera> cameras;
     int current_camera_index = 0;
@@ -38,22 +38,22 @@ public class PlayerController : MonoBehaviour
         cameras[0].transform.position = new Vector3(ball.transform.position.x, ball.transform.position.y + yOffset, ball.transform.position.z);
         if (Input.GetKey(KeyCode.UpArrow))
         {
-            r.AddForce(cameras[1].transform.forward * strength, ForceMode.Impulse);
+            r.AddForce(cameras[1].transform.forward * speed, ForceMode.Impulse);
         }
         if (Input.GetKey(KeyCode.DownArrow))
         {
-            r.AddForce(cameras[1].transform.forward * -strength, ForceMode.Impulse);
+            r.AddForce(cameras[1].transform.forward * -speed, ForceMode.Impulse);
         }
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            r.AddForce(cameras[1].transform.right * -strength, ForceMode.Impulse);
+            r.AddForce(cameras[1].transform.right * -speed, ForceMode.Impulse);
         }
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            r.AddForce(cameras[1].transform.right * strength, ForceMode.Impulse);
+            r.AddForce(cameras[1].transform.right * speed, ForceMode.Impulse);
         }
         if(Input.GetKey(KeyCode.Space)) {
-            r.AddForce(cameras[1].transform.up * strength, ForceMode.Impulse);
+            r.AddForce(cameras[1].transform.up * speed, ForceMode.Impulse);
         }
         if (Input.GetKeyDown(KeyCode.C)) {
             switchCamera();
