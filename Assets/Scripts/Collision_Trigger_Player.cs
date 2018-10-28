@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Collision_Trigger_Player : MonoBehaviour {
     public Vector3 respawnCord;
@@ -25,6 +26,10 @@ public class Collision_Trigger_Player : MonoBehaviour {
         if (other.gameObject.tag == "Jewel")
         {
             Debug.Log("Do jewel stuff.");
+        }
+        if(other.gameObject.tag == "Portal")
+        {
+            SceneManager.LoadScene("Level 2");
         }
     }
 }
