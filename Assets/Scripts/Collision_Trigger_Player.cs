@@ -25,7 +25,8 @@ public class Collision_Trigger_Player : MonoBehaviour {
         }
         if (other.gameObject.tag == "Jewel")
         {
-            Debug.Log("Do jewel stuff.");
+            score.gemsLeft--;
+            Destroy(other.gameObject);
         }
         if(other.gameObject.tag == "Portal")
         {
