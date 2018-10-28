@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Collision_Trigger_Player : MonoBehaviour {
     public Vector3 respawnCord;
@@ -26,6 +27,10 @@ public class Collision_Trigger_Player : MonoBehaviour {
         {
             score.gemsLeft--;
             Destroy(other.gameObject);
+        }
+        if(other.gameObject.tag == "Portal")
+        {
+            SceneManager.LoadScene("Level 2");
         }
     }
 }
