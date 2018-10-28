@@ -18,6 +18,7 @@ public class Collision_Trigger_Player : MonoBehaviour {
      */
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("yee");
         if (other.gameObject.tag == "Respawn") {
             this.transform.position = respawnCord;
         }
