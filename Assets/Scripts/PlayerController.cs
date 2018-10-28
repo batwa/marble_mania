@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float speed = 0.25f;
+    public float jump = 1.0f;
     Rigidbody r;
     List<Camera> cameras;
     int current_camera_index = 0;
@@ -53,7 +54,7 @@ public class PlayerController : MonoBehaviour
             r.AddForce(cameras[1].transform.right * speed, ForceMode.Impulse);
         }
         if(Input.GetKey(KeyCode.Space)) {
-            r.AddForce(cameras[1].transform.up * speed, ForceMode.Impulse);
+            r.AddForce(cameras[1].transform.up * jump, ForceMode.Impulse);
         }
         if (Input.GetKeyDown(KeyCode.C)) {
             switchCamera();
